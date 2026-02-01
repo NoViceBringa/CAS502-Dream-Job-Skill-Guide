@@ -1,0 +1,10 @@
+Technical Challenge: We have beginner level Python skills and have not done network-related analysis, like
+the one in the starter project. Learning Python while building new features on top of the starter project will
+be challenging.
+
+Process Challenge: We are in diﬀerent time zones (PT vs CT) and have limited time during the week for
+assignments, which leaves little room for error checking and rework as assignments are due on Sunday by
+midnight.
+
+Teamwork Challenge: We have similar gaps in our Python skills. Additionally, we have similar strengths and
+weaknesses, which could lead to diﬀiculties in compensating for each other’s weaknesses.

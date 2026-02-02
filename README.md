@@ -13,8 +13,8 @@ For user B, our project will allow them to first select their current job title 
 titles. These suggested titles will be based on how closely related the high importance skills are between the
 chosen job title and the recommended job titles.
 
-## Project by Evon Low and NoVice Bringa
-
 ## Github usage
 We plan to use the same branch for simplicity’s sake, and we will coordinate closely as we develop features in parallel. 
 We will use pull requests when we ship code for the features so we can review each other’s code before it is merged with the main branch.
+
+## Project by Evon Low and NoVice Bringa

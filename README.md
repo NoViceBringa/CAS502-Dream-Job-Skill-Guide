@@ -16,5 +16,7 @@ chosen job title and the recommended job titles.
 ## Github usage
 We plan to use the same branch for simplicity’s sake, and we will coordinate closely as we develop features in parallel. 
 We will use pull requests when we ship code for the features so we can review each other’s code before it is merged with the main branch.
+We have found that pull requests from the Git Hub Desktop app require making a separate branch to perform pull requests. So, we will have multiple
+branches that will need merging as we progress.
 
 ## Project by Evon Low and NoVice Bringa

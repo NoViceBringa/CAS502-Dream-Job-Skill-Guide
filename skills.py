@@ -61,12 +61,14 @@ selected_skill = input("Enter the code of a skill: ")
 edges = skills_graph.edges(selected_skill, data=True)
 edges = sorted(edges, reverse=True, key=lambda edge: edge[2].get('weight', 1))
 
-print(f'\nOften used skills with "{skills_graph.nodes[selected_skill]['label']} ({selected_skill})":')
+print(f"\nOften used skills with \"{skills_graph.nodes[selected_skill]['label']} ({selected_skill})\":")
 occupations_selected = skills_graph.nodes[selected_skill]["occupations"]
 for edge in edges[:10]:
     occupations = skills_graph.nodes[edge[1]]['occupations']
     intersection = sorted(list(set(occupations_selected) & set(occupations)), reverse=True, key=lambda prof: prof[1])
-    print(f'"{skills_graph.nodes[edge[1]]['label']} ({edge[1]})" e.g. as {", ".join([f'{occup[0]} ({occup[1]})' for occup in intersection[:5]])}')
+    print(f"\"{skills_graph.nodes[edge[1]]['label']} ({edge[1]})\" " 
+    f"e.g. as {', '.join([f'{occup[0]} ({occup[1]})' for occup in intersection[:5]])}"
+    )
     print("\n")
 
 

@@ -55,6 +55,14 @@ def build_skills_graph(path_to_skills):
             index = index+1
     return skills_graph
     
+def prompt_user_for_dream_job(prompt):
+    while True:
+        ans = input(f"{prompt} [y/n]: ")
+        if ans.lower() == 'y':
+            return True
+        elif ans.lower() == 'n':
+            return False
+        print("Invalid input. Please enter 'y' or 'n'.")
 
 skills_graph = build_skills_graph("data/Skills.xlsx")
 selected_skill = input("Enter the code of a skill: ")

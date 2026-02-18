@@ -64,19 +64,40 @@ def prompt_user_for_dream_job(prompt):
             return False
         print("Invalid input. Please enter 'y' or 'n'.")
 
-skills_graph = build_skills_graph("data/Skills.xlsx")
-selected_skill = input("Enter the code of a skill: ")
-edges = skills_graph.edges(selected_skill, data=True)
-edges = sorted(edges, reverse=True, key=lambda edge: edge[2].get('weight', 1))
+def user_a_path_for_testing(knows):
+    if knows:
+        return "skills_gap_to_dream_job"
+    return "exploration_of_potential_dream_jobs"
 
-print(f"\nOften used skills with \"{skills_graph.nodes[selected_skill]['label']} ({selected_skill})\":")
-occupations_selected = skills_graph.nodes[selected_skill]["occupations"]
-for edge in edges[:10]:
-    occupations = skills_graph.nodes[edge[1]]['occupations']
-    intersection = sorted(list(set(occupations_selected) & set(occupations)), reverse=True, key=lambda prof: prof[1])
-    print(f"\"{skills_graph.nodes[edge[1]]['label']} ({edge[1]})\" " 
-    f"e.g. as {', '.join([f'{occup[0]} ({occup[1]})' for occup in intersection[:5]])}"
-    )
-    print("\n")
+def user_a_path():
+    knows = prompt_user_for_dream_job("Do you know your dream job?")
+    return user_a_path_for_testing(knows)
 
+def run_exploration():
+    skills_graph = build_skills_graph("data/Skills.xlsx")
+    selected_skill = input("Enter the code of a skill: ")
+    edges = skills_graph.edges(selected_skill, data=True)
+    edges = sorted(edges, reverse=True, key=lambda edge: edge[2].get('weight', 1))
 
+    print(f"\nOften used skills with \"{skills_graph.nodes[selected_skill]['label']} ({selected_skill})\":")
+    occupations_selected = skills_graph.nodes[selected_skill]["occupations"]
+    for edge in edges[:10]:
+        occupations = skills_graph.nodes[edge[1]]['occupations']
+        intersection = sorted(list(set(occupations_selected) & set(occupations)), reverse=True, key=lambda prof: prof[1])
+        print(
+            f"\"{skills_graph.nodes[edge[1]]['label']} ({edge[1]})\" " 
+            f"e.g. as {', '.join([f'{occup[0]} ({occup[1]})' for occup in intersection[:5]])}"
+        )
+        print("\n")
+
+def main():
+    path = user_a_path()
+    if path == "skills_gap_to_dream_job":
+        print("This path will help you identify the skills gap between your current job and your dream job, and provide recommendations on how to bridge that gap.")
+        return
+    else:
+        print("This path will help you explore potential dream jobs based on your current skills and interests, and provide recommendations on how to acquire the necessary skills for those jobs.")
+        run_exploration()
+
+if __name__ == "__main__":
+    main()

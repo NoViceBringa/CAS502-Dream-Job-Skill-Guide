@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 
 # Define a helper function to add_skills for later 
 def add_skills(jobs_graph, node_id, row):
+    # Add Element ID and Element Name to the skills list in each node
+    # The 'if' statement prevents duplication of skills	
     if (row['Element ID'], row['Element Name']) not in jobs_graph.nodes[node_id]['skills']:
         jobs_graph.nodes[node_id]['skills'].append((row['Element ID'], row['Element Name']))
 
@@ -17,15 +19,19 @@ def add_neighbor(jobs_graph, group, neighbor_idx, current_node, row):
     if current_node == neighbor_node:
         return
 
+    #Add a node to the graph based on Title. The if statement prevents duplication
     if not jobs_graph.has_node(neighbor_node):
         jobs_graph.add_node(neighbor_node, label=group.iloc[neighbor_idx]['Title'], skills=[])
         
+    #Call on the function defined above to attach skills to each node 
     add_skills(jobs_graph, neighbor_node, row)
 
+    #Add edges between the nodes. The if statement prevents duplication 
     if not jobs_graph.has_edge(current_node, neighbor_node):
         jobs_graph.add_edge(current_node, neighbor_node)
         jobs_graph[current_node][neighbor_node]["weight"] = 0
 
+    #Define the weight of the edges
     jobs_graph[current_node][neighbor_node]["weight"] = jobs_graph[current_node][neighbor_node]["weight"] + 1
 
 
@@ -34,11 +40,11 @@ def build_jobs_graph(path_to_jobs):
     df = pd.read_excel(path_to_jobs)
 
     # only use skills with importance greater than 2.5
-    # Original line led to warning: filtered_df = df[df['Scale ID'] == 'IM'][df['Data Value'] > 2.5]
-    # Filter in 2 steps, starting with IM rows only
+    # Original line from starter project led to warning: filtered_df = df[df['Scale ID'] == 'IM'][df['Data Value'] > 2.5]
+    # Updated code to filter in 2 steps, starting with IM rows only
     IM_only_df = df[df['Scale ID'] == 'IM']
 
-    #Filter for Importance > 2.5
+    #Next, filter for Importance > 2.5
     filtered_df = IM_only_df[IM_only_df['Data Value'] > 2.5]
     filtered_df = filtered_df.reset_index()
 

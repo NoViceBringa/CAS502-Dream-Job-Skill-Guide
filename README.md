@@ -14,9 +14,16 @@ titles. These suggested titles will be based on how closely related the high imp
 chosen job title and the recommended job titles.
 
 ## Github usage
+
 We plan to use the same branch for simplicity’s sake, and we will coordinate closely as we develop features in parallel. 
 We will use pull requests when we ship code for the features so we can review each other’s code before it is merged with the main branch.
 We have found that pull requests from the Git Hub Desktop app require making a separate branch to perform pull requests. So, we will have multiple
 branches that will need merging as we progress.
+
+## Found A Bug? Have A Suggestion?
+
+Please report any bugs or feature requests via [Slack](https://asu.enterprise.slack.com/archives/C0AH9GCD4SU0).
+Please ensure that you complete the entire bug submission form.
+Bug submission form is currently only open to project members.
 
 ## Project by Evon Low and NoVice Bringa

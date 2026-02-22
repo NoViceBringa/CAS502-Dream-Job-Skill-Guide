@@ -56,20 +56,28 @@ def build_skills_graph(path_to_skills):
     return skills_graph
     
 def prompt_user_for_dream_job(prompt):
+    """
+    Prompts the user with a yes/no question and returns True for 'y' and False for 'n'.
+    Continues to prompt until a valid input is received. Also displays an error message for invalid inputs.
+    """
     while True:
         ans = input(f"{prompt} [y/n]: ")
+        # This will convert the input to lowercase to control for case sensitivity
         if ans.lower() == 'y':
             return True
         elif ans.lower() == 'n':
             return False
         print("Invalid input. Please enter 'y' or 'n'.")
 
+# For testing purposes, we use the user_a_path_for_testing function to simulate user input. This allows us to test the logic of the other functions without user input.
 def user_a_path_for_testing(knows):
+    """This function is used for testing the user_a_path function. It takes a boolean input and returns the corresponding path."""
     if knows:
         return "skills_gap_to_dream_job"
     return "exploration_of_potential_dream_jobs"
 
 def user_a_path():
+    """The hope is to eventaully replace the testing function with this function."""
     knows = prompt_user_for_dream_job("Do you know your dream job?")
     return user_a_path_for_testing(knows)
 

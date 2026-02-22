@@ -22,8 +22,10 @@ branches that will need merging as we progress.
 
 ## Found A Bug? Have A Suggestion?
 
-Please report any bugs or feature requests via [Slack](https://asu.enterprise.slack.com/archives/C0AH9GCD4SU0).
+Please report any bugs or feature requests via [Slack](https://asu.enterprise.slack.com/archives/C0AH9GCD4SU).
 Please ensure that you complete the entire bug submission form.
-Bug submission form is currently only open to project members.
+The bug submission form is currently only open to project members. Inquiring members of the public may email suggestions/bug reports to the support email at:
+
+<bugs-dream-job-skill-aaaatii3rkbmawdpjnjy3n5ynu@asu.org.slack.com>
 
 ## Project by Evon Low and NoVice Bringa

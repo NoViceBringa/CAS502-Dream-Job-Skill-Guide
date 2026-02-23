@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Low"
+  given-names: "Evon"
+- family-names: "Bringa"
+  given-names: "NoVice"
+title: "Dream Job Skill Guide"
+version: 1.0
+doi: XX.XXXX/zenodo.XXXX (Placeholder until published)
+date-released: 2026-03-04
+url: "https://github.com/NoViceBringa/CAS502-Dream-Job-Skill-Guide"

@@ -118,34 +118,37 @@ def build_jobs_graph(path_to_jobs):
 # Build the graph with real data
 jobs_graph = build_jobs_graph("data/Skills.xlsx") 
 
-# Ask user for input 
-selected_title = input("Enter your current title (e.g. Physicists: ")
+# Separating the user input sections below so unit tests don't run these parts
+if __name__ == '__main__':
 
-# Define and occupation cc variable so that we can search for the matching label to the user input title in the dataset 
-occ = None
-for node, data in jobs_graph.nodes(data=True):
-    if data.get("label") == selected_title:
-        occ = node
-        # Stop the loop when the matching title is found 
-        break 
+    # Ask user for input 
+    selected_title = input("Enter your current title (e.g. Physicists: ")
 
-# Print error if selected_title cannot be matched to data in dataset
-if occ is None:
-    print("Title not found!")
+    # Define and occupation cc variable so that we can search for the matching label to the user input title in the dataset 
+    occ = None
+    for node, data in jobs_graph.nodes(data=True):
+        if data.get("label") == selected_title:
+            occ = node
+            # Stop the loop when the matching title is found 
+            break 
 
-# Find the top neighbors to the selected_title, sort them by weight of edges in descending orders so it's highest weight first  
-else:
-    neighbors = sorted(
-        jobs_graph[occ].items(),
-        key=lambda kv: kv[1].get("weight", 1),
-        reverse=True
-    )
+    # Print error if selected_title cannot be matched to data in dataset
+    if occ is None:
+        print("Title not found!")
 
-    print("\nTop 5 related occupations and number of shared skills with same importance and level:")
-
-    # Print the top 5 closest occupations to the selected_title based on weight 
-    for n, attr in neighbors[:5]:
-        print(
-           jobs_graph.nodes[n]["label"],
-            "|", attr["weight"]
+    # Find the top neighbors to the selected_title, sort them by weight of edges in descending orders so it's highest weight first  
+    else:
+        neighbors = sorted(
+            jobs_graph[occ].items(),
+            key=lambda kv: kv[1].get("weight", 1),
+            reverse=True
         )
+
+        print("\nTop 5 related occupations and number of shared skills with same importance and level:")
+
+        # Print the top 5 closest occupations to the selected_title based on weight 
+        for n, attr in neighbors[:5]:
+            print(
+            jobs_graph.nodes[n]["label"],
+                "|", attr["weight"]
+            )

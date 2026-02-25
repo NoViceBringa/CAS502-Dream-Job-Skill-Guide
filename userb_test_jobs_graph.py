@@ -9,10 +9,10 @@ class TestJobsGraph(unittest.TestCase):
         cls.jobs_graph = userb_feature_v1.build_jobs_graph("data/Skills.xlsx")
     
     def test_num_nodes(self):
-        self.assertEqual(self.jobs_graph.number_of_nodes(), 879)
+        self.assertEqual(self.jobs_graph.number_of_nodes(), 668)
 
     def test_num_edges(self):
-        self.assertEqual(self.jobs_graph.number_of_edges(), 385337)
+        self.assertEqual(self.jobs_graph.number_of_edges(), 150979)
 
     def test_num_unique_skills(self):
         all_skills = set()

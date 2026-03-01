@@ -12,11 +12,11 @@ def usera_path(jobs_graph):
     labels = {data.get("label") for _, data in jobs_graph.nodes(data=True)}
 
     if current_title not in labels:
-        print(f"Current job title '{current_title}' not found!")
+        print(f"Current job title '{current_title}' not found! View list of job titles here: https://github.com/NoViceBringa/CAS502-Dream-Job-Skill-Guide/blob/main/data/Skills.xlsx")
         return
     
     if dream_title not in labels:
-        print(f"Dream job title '{dream_title}' not found!")
+        print(f"Dream job title '{dream_title}' not found! View list of job titles here: https://github.com/NoViceBringa/CAS502-Dream-Job-Skill-Guide/blob/main/data/Skills.xlsx")
         return
     
     # This finds the nodes for the current and dream job titles.

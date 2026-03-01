@@ -1,7 +1,7 @@
 # This was hard...
 
-from usera_feature_v2 import usera_path
-from userb_feature_v1 import build_jobs_graph, userb_path
+from usera_feature_v1 import usera_path
+from userb_feature_v2 import build_jobs_graph, userb_path
 
 
 def prompt_user_for_dream_job(prompt):

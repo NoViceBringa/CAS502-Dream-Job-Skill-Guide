@@ -29,3 +29,5 @@ The bug submission form is currently only open to project members. Inquiring mem
 <bugs-dream-job-skill-aaaatii3rkbmawdpjnjy3n5ynu@asu.org.slack.com>
 
 ## Project by Evon Low and NoVice Bringa
+
+[![DOI](https://zenodo.org/badge/1146980718.svg)](https://doi.org/10.5281/zenodo.18827265)

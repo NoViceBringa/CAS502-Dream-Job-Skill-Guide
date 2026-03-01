@@ -1,6 +1,6 @@
 # This was hard...
 
-from usera_feature_v1 import usera_path
+from usera_feature_v2 import usera_path
 from userb_feature_v1 import build_jobs_graph, userb_path
 
 
@@ -21,10 +21,10 @@ def prompt_user_for_dream_job(prompt):
 
 def main():
     """ 
-    Controls the graph building in userb_feature_v1 and 
+    Controls the graph building in userb_feature_v2 and 
     routes the user to the appropriate feature based on their input. 
     """
-    # Builds the graph from the userb_feature_v1 function.
+    # Builds the graph from the userb_feature_v2 function.
     jobs_graph = build_jobs_graph("data/Skills.xlsx")
 
     knows = prompt_user_for_dream_job("Do you know your dream job?")

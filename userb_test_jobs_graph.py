@@ -1,12 +1,12 @@
 #Testing the V1 code to make sure jobs_graph is generated correctly
 
 import unittest
-import userb_feature_v1
+import userb_feature_v2
 
 class TestJobsGraph(unittest.TestCase):
     @classmethod 
     def setUpClass(cls):
-        cls.jobs_graph = userb_feature_v1.build_jobs_graph("data/Skills.xlsx")
+        cls.jobs_graph = userb_feature_v2.build_jobs_graph("data/Skills.xlsx")
     
     def test_num_nodes(self):
         self.assertEqual(self.jobs_graph.number_of_nodes(), 668)
